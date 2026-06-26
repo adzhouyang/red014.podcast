@@ -17,6 +17,7 @@ coverage/
 *.pem
 
 # Generated podcast artifacts
+data/
 tts-output/
 output/
 jobs/

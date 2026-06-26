@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Red014.Podcast Web
 
-## Getting Started
+这是 Red014.Podcast 的 Next.js Web 应用。项目完整说明、环境变量、启动方式和使用流程请看根目录 [README.md](../README.md)。
 
-First, run the development server:
+## 本地启动
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+打开 `http://localhost:3000`。
+
+## 常用命令
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run lint
+npm test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 目录
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/app/`：页面与 API Route
+- `src/importers/`：文本、PDF、网页导入
+- `src/providers/`：脚本模型与 TTS 供应商适配
+- `src/podcast/`：播客脚本 schema 与生成逻辑
+- `src/audio/`：音频处理与渲染辅助
+- `tests/`：单元测试
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 环境变量
 
-## Learn More
+密钥只通过环境变量读取。不要提交 `.env` 或任何真实 API key。
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+可用变量包括 `ANTHROPIC_API_KEY`、`OPENAI_API_KEY`、`HERMES_API_KEY`、`GEMINI_API_KEY`、`VOLC_APP_ID`、`VOLC_API_KEY` 和 `RED014_DATA_DIR`。
